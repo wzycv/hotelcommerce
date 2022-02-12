@@ -604,28 +604,28 @@ class InstallModelInstall extends InstallAbstractModel
 
     public function setNotification($notificationData)
     {
-        if (function_exists('curl_version')) {
-            $params = [
-                'url' => 'https://prestashop.webkul.com/hotel-reservation-clients/getNotification.php',
-                'method' => 'POST',
-                'headers' => array('Content-Type: application/json'),
-                'postdata' => json_encode($notificationData),
-            ];
+        // if (function_exists('curl_version')) {
+        //     $params = [
+        //         'url' => 'https://prestashop.webkul.com/hotel-reservation-clients/getNotification.php',
+        //         'method' => 'POST',
+        //         'headers' => array('Content-Type: application/json'),
+        //         'postdata' => json_encode($notificationData),
+        //     ];
 
-            $curlInit = curl_init();
-            curl_setopt($curlInit, CURLOPT_URL, $params['url']);
-            curl_setopt($curlInit, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-            curl_setopt($curlInit, CURLOPT_HTTPHEADER, $params['headers']);
-            curl_setopt($curlInit, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($curlInit, CURLOPT_CUSTOMREQUEST, $params['method']);
-            curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, 1);
-            if (isset($params['postdata'])) {
-                curl_setopt($curlInit, CURLOPT_POSTFIELDS, $params['postdata']);
-            }
-            $response = curl_exec($curlInit);
-        } else {
-            // Mail Code
-        }
+        //     $curlInit = curl_init();
+        //     curl_setopt($curlInit, CURLOPT_URL, $params['url']);
+        //     curl_setopt($curlInit, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+        //     curl_setopt($curlInit, CURLOPT_HTTPHEADER, $params['headers']);
+        //     curl_setopt($curlInit, CURLOPT_SSL_VERIFYPEER, false);
+        //     curl_setopt($curlInit, CURLOPT_CUSTOMREQUEST, $params['method']);
+        //     curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, 1);
+        //     if (isset($params['postdata'])) {
+        //         curl_setopt($curlInit, CURLOPT_POSTFIELDS, $params['postdata']);
+        //     }
+        //     $response = curl_exec($curlInit);
+        // } else {
+        //     // Mail Code
+        // }
 
         return true;
     }
